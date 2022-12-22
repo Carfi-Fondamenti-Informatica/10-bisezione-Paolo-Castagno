@@ -33,4 +33,5 @@ int main() {
   
         cout <<int(x*10000)/10000.0<<endl;
         cout<< val (x);
+    return 0;
 }
