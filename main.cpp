@@ -1,4 +1,5 @@
 
+
 #include <iostream>
 #include <cmath>
 using namespace std;
@@ -17,7 +18,7 @@ int main() {
 
     do {
         x=(a+b)/2;
-        if (val (a)==0){
+        if (val (x)==0){
             break;
         } else {
             if (val (a)*(b)<0){
@@ -25,13 +26,11 @@ int main() {
             } else {
                 a=x;
             }
-            err=fabs((b-a)/2);
+            err=abs((b-a)/2);
         
         }
     } while (err>=(1e-6));   
-        
-    x=x*10000;
-        x=(int)x;
-        cout <<x<<endl;
+  
+        cout <<int(x*10000)/10000.0<<endl;
         cout<< val (x);
 }
