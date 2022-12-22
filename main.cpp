@@ -1,37 +1,33 @@
-
-
 #include <iostream>
 #include <cmath>
 using namespace std;
-
-float val (float x){
-    return (x*x)* cos(x)+1;
+float f(float y){
+    float x = y*y * cos(y) + 1;
+    return x;
 }
-
 int main() {
-    float a,b,x,err=1; 
-    
+    float a = 0, b = 0, x = 0, err = 0;
     do{
-        cout<<"inserire estremi";
-        cin >> a >> b ;
-    } while (val(a)*val(b)>=0);
-
-    do {
-        x=(a+b)/2;
-        if (val (x)==0){
-            break;
-        } else {
-            if (val (a)*(b)<0){
-                b=x;
-            } else {
-                a=x;
-            }
-            err=abs((b-a)/2);
-        
+        cout << "inserire estremi" << endl;
+        cin >> a >> b;
+        }while(f(a) * f(b) >= 0);
+    do{
+        x=(a + b) / 2;
+        if(f(x) == 0){
+            cout << x << endl;
+            cout << f(x);
+            return 0;
         }
-    } while (err>=(1e-6));   
-  
-        cout <<int(x*10000)/10000.0<<endl;
-        cout<< val (x);
+        else{
+            if(f(a) * f(x) < 0){
+                b = x;
+            }
+            else{
+                a = x;
+            }
+            err = abs((b - a) / 2);
+        }
+  }while(err >= 1e-6);
+    cout << int(x * 10000) / 10000.0 <<endl;
     return 0;
 }
